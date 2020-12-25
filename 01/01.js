@@ -1,4 +1,3 @@
-let assert = require('assert')
 const fs = require('fs')
 
 arrSum = arr => arr.reduce((a,b) => a + b, 0)
