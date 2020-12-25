@@ -1,17 +1,5 @@
 // It is a six-digit number.
-function isSixDigit(num){
-    return num.length === 6
-}
-console.log(isSixDigit("123456")) // true
-console.log(isSixDigit("1234")) // false
-
-// // The value is within the range given in your puzzle input.
-// function withinRange(num, min, max){
-//     return num > min && num < max
-// }
-// console.log(withinRange(10, 0, 20)) // true
-// console.log(withinRange(10, 11, 20)) // false
-// console.log(withinRange(10, 0, 9)) // false
+isSixDigit = num => num.length === 6
 
 // Two adjacent digits are the same (like 22 in 122345).
 function adjacentNumber(num){
@@ -26,9 +14,6 @@ function adjacentNumber(num){
     }
     return false
 }
-console.log(adjacentNumber("112345")) // true
-console.log(adjacentNumber("123455")) // true
-console.log(adjacentNumber("123456")) // false
 
 // Going from left to right, the digits never decrease; they only ever increase or stay the same (like 111123 or 135679).
 function increasingNumber(num){
@@ -43,9 +28,6 @@ function increasingNumber(num){
     }
     return true
 }
-console.log(increasingNumber("1234445")) // true
-console.log(increasingNumber("123456")) // true
-console.log(increasingNumber("123245")) // false
 
 function adjacentNumber2(num){
     num_list = num.split('')
@@ -65,18 +47,25 @@ function adjacentNumber2(num){
     return (curr_counter === 2)
 }
 
-function crackPassword(min, max){
+part1 = num => isSixDigit(num) && adjacentNumber(num) && increasingNumber(num)
+part2 = num => isSixDigit(num) && adjacentNumber2(num) && increasingNumber(num)
+
+function crackPassword(min, max, func){
     let total = 0
     for (let i = min; i < max; i++){
         num = i.toString()
-        if (isSixDigit(num) && 
-            // adjacentNumber(num) && // part 1
-            adjacentNumber2(num) && //part 2
-            increasingNumber(num)){
-                total += 1
-            }
+        if (func(num)){
+            total += 1
+        }
     }
-    console.log(total)
+    return total
 }
 
-crackPassword(256310, 732736)
+
+
+module.exports = {part1, part2}
+
+if (require.main === module){
+    console.log(crackPassword(256310, 732736, part1))
+    console.log(crackPassword(256310, 732736, part2))
+}
