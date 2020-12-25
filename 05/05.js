@@ -12,7 +12,7 @@ const fs = require('fs')
 //   A - mode of 3rd parameter,  0 == position mode,
 //                                    omitted due to being a leading zero
 pad_opcode = (opcode) => "0".repeat(5 - opcode.length) + opcode
-assert.equal(pad_opcode("010"), "00010")
+
 read_opcode = (opcode) => {
     opcode_padded = pad_opcode(opcode.toString())
     return {opcode : opcode,
@@ -94,6 +94,10 @@ function process_arr (arr, input){
   }
 }
 
-data = Buffer.from(fs.readFileSync('d5.txt')).toString().split(",").map(val => parseInt(val))
-console.log(process_arr(data.slice(0), 1))
-console.log(process_arr(data.slice(0), 5))
+module.exports = process_arr
+
+if (require.main === module){
+    data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
+    console.log(process_arr(data.slice(0), 1))
+    console.log(process_arr(data.slice(0), 5))
+}
