@@ -43,8 +43,8 @@ orbit = (input, id1, id2) => {
 
 module.exports = orbit
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
-    let data = Buffer.from(fs.readFileSync('d6.txt')).toString()
+    let data = Buffer.from(fs.readFileSync('input.txt')).toString()
     console.log(orbit(data, "SAN", "YOU"))
   }
