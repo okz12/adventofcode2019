@@ -17,11 +17,11 @@ module.exports = sensorboost
 
 if (!module.parent) {
     let fs = require('fs')
-    data = Buffer.from(fs.readFileSync('d9.txt')).toString().split(",").map(val => parseInt(val))
+    data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
 
     // part 1
-    console.log(sensorboost(data, [1]))
+    console.log(sensorboost(data, [1])[0])
 
     // part 2
-    console.log(sensorboost(data, [2]))
+    console.log(sensorboost(data, [2])[0])
   }
