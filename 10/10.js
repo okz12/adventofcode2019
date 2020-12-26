@@ -75,15 +75,15 @@ find_station = (asteroid_map) => {
 
 module.exports = {find_station: find_station, vaporize: vaporize}
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
-    data = Buffer.from(fs.readFileSync('d10.txt')).toString()
+    data = Buffer.from(fs.readFileSync('input.txt')).toString()
 
     // part 1
     station = find_station(data)
-    console.log(station)
+    console.log(station.max_asteroids)
 
     // part 2
     vaporize_200 = vaporize(station.station, data, 200)
-    console.log(vaporize_200)
+    console.log(vaporize_200.x*100 + vaporize_200.y)
   }

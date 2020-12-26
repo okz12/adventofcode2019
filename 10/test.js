@@ -1,5 +1,5 @@
 const assert = require('assert');
-const asteroids = require('./asteroids');
+const asteroids = require('./10');
 const find_station = asteroids.find_station
 const vaporize = asteroids.vaporize
 
@@ -19,7 +19,7 @@ describe('Day 10', () => {
             }
         }
         actual = find_station(asteroid_map)
-        assert.deepEqual(actual, expected)
+        assert.deepStrictEqual(actual, expected)
     });
 
     it('Station Exploration Sample 2', () => {
@@ -41,7 +41,7 @@ describe('Day 10', () => {
             }
         }
         actual = find_station(asteroid_map)
-        assert.deepEqual(actual, expected)
+        assert.deepStrictEqual(actual, expected)
     });
 
     it('Station Exploration Sample 3', () => {
@@ -63,7 +63,7 @@ describe('Day 10', () => {
             }
         }
         actual = find_station(asteroid_map)
-        assert.deepEqual(actual, expected)
+        assert.deepStrictEqual(actual, expected)
     });
 
     it('Station Exploration Sample 4', () => {
@@ -85,7 +85,7 @@ describe('Day 10', () => {
             }
         }
         actual = find_station(asteroid_map)
-        assert.deepEqual(actual, expected)
+        assert.deepStrictEqual(actual, expected)
     });
 
     it('Station Exploration Sample 5', () => {
@@ -117,7 +117,7 @@ describe('Day 10', () => {
             }
         }
         actual = find_station(asteroid_map)
-        assert.deepEqual(actual, expected)
+        assert.deepStrictEqual(actual, expected)
     });
 
     it('Vaporization Sample 1', () => {
@@ -147,7 +147,7 @@ describe('Day 10', () => {
             }
         max = find_station(asteroid_map)
         actual = vaporize(max.station, asteroid_map, 200)
-        assert.deepEqual(actual, expected)
+        assert.deepStrictEqual(actual, expected)
     });
 
 })
