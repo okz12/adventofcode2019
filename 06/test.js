@@ -1,7 +1,7 @@
 const assert = require('assert');
 
-const orbit = require('./orbit');
-const orbit2 = require('./orbit2.js')
+const orbit = require('./06').orbit;
+const orbit2 = require('./06.js').orbit2;
 
 describe('Day 6', () => {
     it('Orbit Counts', () => {
