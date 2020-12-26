@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 function process_arr (arr){
   for (let i = 0; i < arr.length; i += 4){
     switch (arr[i]){
@@ -34,6 +32,7 @@ function finder(arr, n, v){
 module.exports = {process_arr}
 
 if (require.main === module){
+  let fs = require('fs')
   data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
   data[1] = 12
   data[2] = 2

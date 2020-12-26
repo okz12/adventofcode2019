@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 get_x = location => parseInt(location.split(".")[0])
 get_y = location => parseInt(location.split(".")[1])
 store = (x, y) => x + "." + y
@@ -59,6 +57,7 @@ function closest_manhattan(w1, w2){
 module.exports = closest_manhattan
 
 if (require.main === module){
+    let fs = require('fs')
     var data = Buffer.from(fs.readFileSync('input.txt')).toString().split("\n")
     var w1 = data[0].split(",")
     var w2 = data[1].split(",")
