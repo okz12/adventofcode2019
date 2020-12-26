@@ -1,5 +1,5 @@
 const assert = require('assert');
-const sensorboost = require('./sensorboost');
+const sensorboost = require('./09');
 
 
 describe('Day 9', () => {
