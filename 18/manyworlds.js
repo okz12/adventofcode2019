@@ -6,3 +6,5 @@ input = `########################
 
 input = input.split('\n').map(x => x.trim())
 
+
+console.log(input)

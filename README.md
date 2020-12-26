@@ -1,2 +1,5 @@
-# adventofcode2019
-Advent of Code 2019 (JS)
+# Advent of Code 2019
+
+### Learning JS through Xmassy puzzles
+
+See challenge descriptions here: https://adventofcode.com/2019
