@@ -47,24 +47,23 @@ build_permutation = arr =>{
 
 
 module.exports = {
-    run_amplifiers: run_amplifiers,
-    run_amplifiers_feedback: run_amplifiers_feedback
+    run_amplifiers, run_amplifiers_feedback
 }
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
-    data = Buffer.from(fs.readFileSync('d7.txt')).toString().split(",").map(val => parseInt(val))
+    data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
 
     // part 1
     phases = build_permutation([0, 1, 2, 3, 4])
     outputs = phases.map(val => run_amplifiers(data, val))
     max_idx = outputs.indexOf(Math.max(...outputs))
-    console.log(phases[max_idx], outputs[max_idx])
+    console.log(outputs[max_idx])
 
 
     // part 2
     phases = build_permutation([5, 6, 7, 8, 9])
     outputs = phases.map(val => run_amplifiers_feedback(data, val))
     max_idx = outputs.indexOf(Math.max(...outputs))
-    console.log(phases[max_idx], outputs[max_idx])
+    console.log(outputs[max_idx])
   }
