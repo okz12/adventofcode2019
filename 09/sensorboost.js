@@ -15,7 +15,7 @@ sensorboost = (instructions, inputs) => {
 
 module.exports = sensorboost
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
     data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
 
