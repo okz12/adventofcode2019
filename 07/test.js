@@ -1,5 +1,5 @@
 const assert = require('assert');
-const amplifiers = require('./amplifiers');
+const amplifiers = require('./07');
 let run_amplifiers = amplifiers.run_amplifiers
 let run_amplifiers_feedback = amplifiers.run_amplifiers_feedback
 
