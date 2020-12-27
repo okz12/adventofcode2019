@@ -121,9 +121,9 @@ visualize = (outputs) => {
     }
 }
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
-    data = Buffer.from(fs.readFileSync('d13.txt')).toString().split(",").map(val => parseInt(val))
+    data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
 
     //part 1
     console.log(blocks_count(arcade(data.slice())))
