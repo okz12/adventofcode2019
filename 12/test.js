@@ -1,5 +1,5 @@
 const assert = require('assert');
-const moons = require('./moons');
+const moons = require('./12');
 const find_energy = moons.find_energy
 const find_repeat = moons.find_repeat
 

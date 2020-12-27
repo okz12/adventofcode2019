@@ -76,11 +76,9 @@ find_repeat = (positions) => {
 
 module.exports = {find_energy: find_energy, find_repeat: find_repeat}
 
-if (!module.parent) {
-    start = `<x=-9, y=10, z=-1>
-    <x=-14, y=-8, z=14>
-    <x=1, y=5, z=6>
-    <x=-19, y=7, z=8>`
+if (require.main === module) {
+    let fs = require('fs')
+    start = Buffer.from(fs.readFileSync('input.txt')).toString()
     n = 1000
 
     // part 1
