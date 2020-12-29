@@ -3,8 +3,8 @@
 // var it = mocha.it
 const assert = require('assert');
 
-const fuel = require('./fuel');
-const bsearch = require('./fuel2')
+const fuel = require('./14').fuel;
+const bsearch = require('./14').binary_search;
 
 
 describe('Day 14', () => {
