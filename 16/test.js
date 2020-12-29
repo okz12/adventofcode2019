@@ -1,5 +1,5 @@
 const assert = require('assert');
-const fftlib = require('./fft');
+const fftlib = require('./16');
 const fft = fftlib.fft
 const part2 = fftlib.part2
 

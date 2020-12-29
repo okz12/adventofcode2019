@@ -43,9 +43,9 @@ part2 = input => {
 
 module.exports = {fft: run_phases_n, part2: part2}
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
-    data = Buffer.from(fs.readFileSync('d16.txt')).toString()
+    data = Buffer.from(fs.readFileSync('input.txt')).toString()
     console.log(run_phases_n(data.slice(), [0, 1, 0, -1], 100))
 
     console.log(part2(data.slice()))
