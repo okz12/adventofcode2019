@@ -3,7 +3,7 @@
 // var it = mocha.it
 const assert = require('assert');
 
-const scaffold = require('./scaffold')
+const scaffold = require('./17')
 let alignment = scaffold.alignment
 
 describe('Day 17', () => {

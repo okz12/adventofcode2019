@@ -163,7 +163,7 @@ part2 = instructions => {
 
 module.exports = {alignment : findCrossSectionAlignment}
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
     data = Buffer.from(fs.readFileSync('input.txt')).toString().split(",").map(val => parseInt(val))
 
@@ -171,6 +171,6 @@ if (!module.parent) {
     console.log(findCrossSectionAlignment(readMap(data.slice())))
 
     // part 2
-    console.log(traverseMaze(data.slice()))
+    // console.log(traverseMaze(data.slice()))
     console.log(part2(data.slice()))
 }
