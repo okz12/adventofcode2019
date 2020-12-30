@@ -76,7 +76,7 @@ findMatch = tiles => {
 module.exports = {findMatch: findMatch}
 
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
     data = Buffer.from(fs.readFileSync('input.txt')).toString()
 

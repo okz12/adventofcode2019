@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const bugs = require('./bugs');
+const bugs = require('./24');
 const findMatch = bugs.findMatch
 
 
