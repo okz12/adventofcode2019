@@ -167,7 +167,7 @@ donut = mazeMap => {
 
 module.exports = donut
 
-if (!module.parent) {
+if (require.main === module) {
     let fs = require('fs')
     data = Buffer.from(fs.readFileSync('example3.txt')).toString()
     console.log(donut(data.slice()))
